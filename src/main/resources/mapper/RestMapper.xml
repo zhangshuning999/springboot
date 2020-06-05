@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.RestMapper">
+
+    <select id="findTree" resultType="com.jk.model.RestTreeModel">
+        select * from Rest_tree where pid = #{pid}
+
+    </select>
+
+    <select id="GetCount" resultType="int">
+        select count(1) from t_position_zw
+    </select>
+
+    <select id="bootstrapGetRestList" resultType="com.jk.model.PositionModel">
+        select * from t_position_zw  order by positiontop limit #{start},#{end}
+    </select>
+
+
+
+    <delete id="deletes">
+        delete  from t_position_zw where positionid = ${ids}
+    </delete>
+
+    <select id="selectPositId" resultType="com.jk.model.PositionModel">
+   select * from t_position_zw where positionid = #{id}
+
+    </select>
+
+    <update id="updateposition">
+        update t_position_zw set positionpost = #{positionpost},positionname=#{positionname},positioncount = #{positioncount},positionIntegral=#{positionIntegral},positiondate=#{positiondate} where positionid=#{positionid}
+    </update>
+
+</mapper>
