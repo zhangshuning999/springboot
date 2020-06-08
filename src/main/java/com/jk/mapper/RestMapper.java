@@ -26,4 +26,9 @@ public interface RestMapper {
     void zt(@Param("id") Integer id,@Param("zt") Integer zt);
 
 
+    int selectCount(HashMap<String, Object> result);
+
+    List<PositionModel> selectTalents(HashMap<String, Object> result);
+
+    void addPosition(PositionModel positionModel);
 }

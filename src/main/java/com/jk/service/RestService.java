@@ -20,4 +20,7 @@ public interface RestService {
 
     Map bootstrapGetRestList(Integer page, Integer rows);
 
+    Map selectTalents(Integer page, Integer rows);
+
+    void addPosition(PositionModel positionModel);
 }

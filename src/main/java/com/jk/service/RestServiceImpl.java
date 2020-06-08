@@ -36,6 +36,25 @@ public class RestServiceImpl implements RestService {
         return parmse;
     }
 
+    @Override
+    public Map selectTalents(Integer page, Integer rows) {
+        HashMap<String, Object> parmse  = new HashMap<>();
+        HashMap<String, Object> result = new HashMap<>();
+        int count = restMapper.selectCount(result);
+        parmse.put("total",count);
+        result.put("start",(page-1)*rows);
+        result.put("end",rows);
+        List<PositionModel> list = restMapper.selectTalents(result);
+        parmse.put("rows",list);
+
+        return parmse;
+    }
+
+    @Override
+    public void addPosition(PositionModel positionModel) {
+        restMapper.addPosition(positionModel);
+    }
+
 
     @Override
     public void deletes(Integer ids) {

@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-zxz" />
+        <module name="springboot" />
+        <module name="springboot-zxx" />
       </profile>
     </annotationProcessing>
   </component>

@@ -3,8 +3,7 @@
 <mapper namespace="com.jk.mapper.RestMapper">
 
     <select id="findTree" resultType="com.jk.model.RestTreeModel">
-        select * from Rest_tree where pid = #{pid}
-
+        select * from rest_tree where pid = #{pid}
     </select>
 
     <select id="GetCount" resultType="int">
@@ -18,16 +17,35 @@
 
 
     <delete id="deletes">
-        delete  from t_position_zw where positionid = ${ids}
+        delete  from t_position_zw where positionid = #{ids}
     </delete>
 
     <select id="selectPositId" resultType="com.jk.model.PositionModel">
-   select * from t_position_zw where positionid = #{id}
-
+         select * from t_position_zw where positionid = #{id}
     </select>
 
     <update id="updateposition">
         update t_position_zw set positionpost = #{positionpost},positionname=#{positionname},positioncount = #{positioncount},positionIntegral=#{positionIntegral},positiondate=#{positiondate} where positionid=#{positionid}
     </update>
+
+    <select id="selectCount" resultType="int">
+        select count(1) from t_talents_rc
+    </select>
+
+    <select id="selectTalents" resultType="com.jk.model.PositionModel">
+        select * from t_talents_rc  limit #{start},#{end}
+    </select>
+
+    <insert id="addPosition">
+        insert into t_position_zw (
+positionpost,
+positionname,
+positioncount,
+positionIntegral,
+positiondate,
+positiontop
+) values
+(#{positionpost},#{positionname},#{positioncount},#{positionIntegral},#{positiondate},#{positiontop})
+    </insert>
 
 </mapper>

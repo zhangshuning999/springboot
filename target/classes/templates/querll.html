@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table class="table text-nowrap">
+    <thead>
+    <tr>
+        <th>职位名称</th>
+<!--        <th>职位名称</th>-->
+<!--        <th>工作经验</th>-->
+<!--        <th>工作地点</th>-->
+<!--        <th>更新时间</th>-->
+<!--        <th>   </th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="list:${list}">
+        <td th:text="${list.positionid}"></td>
+<!--        <td th:text="${list.jobtitle}"></td>-->
+<!--        <td th:text="${list.undergo}"></td>-->
+<!--        <td th:text="${list.jobarea}"></td>-->
+<!--        <td th:text="${list.jobdate}"></td>-->
+<!--        <td >-->
+<!--            &lt;!&ndash;   <a  href = "javaScript:findjobbid(userId=${list.id})">查看详情</a>&ndash;&gt;-->
+<!--            <a th:href="@{/findjobbid(id=${list.id})}">查看详情<</a>-->
+<!--        </td>-->
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
